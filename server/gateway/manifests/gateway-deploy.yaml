@@ -21,8 +21,6 @@ spec:
       containers:
         - name: gateway
           image: ridhiman27/gateway
-          ports:
-            - containerPort: 8880
           envFrom:
             - configMapRef: 
                 name: gateway-configmap

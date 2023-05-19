@@ -8,7 +8,7 @@ metadata:
   nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
 spec:
   rules:
-    - host: mp3converter.com
+    - host: localhost
       http:
         paths:
           - path: /
@@ -18,4 +18,3 @@ spec:
                 name: gateway
                 port: 
                   number: 8880
-                  
