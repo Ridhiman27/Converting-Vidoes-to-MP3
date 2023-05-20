@@ -8,4 +8,4 @@ spec:
   resoures:
     requests:
       storage: 1Gi
-  storageClassname: strandard
+  storageClassname: standard
