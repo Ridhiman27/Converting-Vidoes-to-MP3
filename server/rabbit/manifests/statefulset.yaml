@@ -3,15 +3,14 @@ kind: StatefulSet
 metadata:
   name: rabbitmq
 spec:
-  service: "not-applicable"
+  serviceName: "not-applicable"
   selector:
     matchLabels:
       app: rabbitmq
   template:
     metadata:
       labels:
-        app:rabbitmq
-    
+        app: rabbitmq
     spec:
       containers:
         - name: rabbitmq
@@ -20,28 +19,18 @@ spec:
             - name: http
               protocol: TCP
               containerPort: 15672
-            - name: ampq
+            - name: amqp
               protocol: TCP
               containerPort: 5672
           envFrom:
             - configMapRef:
-              name: rabbitmq-configmap
+                name: rabbitmq-configmap
             - secretRef:
-              name: rabbitmq-secret
+                name: rabbitmq-secret
           volumeMounts:
             - mountPath: "/var/lib/rabbitmq"
               name: rabbitmq-volume
-      volumeMounts:
+      volumes:
         - name: rabbitmq-volume
           persistentVolumeClaim:
             claimName: rabbitmq-pvc
-
-
-
-
-          
-
-
-
-
-
