@@ -15,8 +15,8 @@ spec:
       maxSurge: 8
   template:
     metadata:
-    labels:
-      app: converter
+      labels:
+        app: converter
     spec:
       containers:
         - name: converter
