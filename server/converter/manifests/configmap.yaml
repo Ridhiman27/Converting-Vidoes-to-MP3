@@ -4,5 +4,5 @@ metadata:
   name: converter-configmap
 data:
   MP3_QUEUE: "mp3"
-  Video_QUEUE: "video"
+  VIDEO_QUEUE: "video"
   
